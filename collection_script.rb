@@ -23,6 +23,10 @@ end
 
 filter_params = Hash.new
 filter_params[:track] = Array[
+  '@BarackObama',
+  '@MittRomney',
+  '@PaulRyanVP',
+  '@JoeBiden',
   'election',
   'Obama2012',
   'Romney2012',
