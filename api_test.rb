@@ -22,10 +22,20 @@ end
 
 
 filter_params = Hash.new
-filter_params[:track] = Array['photography']
+filter_params[:track] = Array['election']
+filter_params[:locations] = Array[]
 
 tweetstream_client.filter(filter_params) do |status|
-  puts "#{status.text} - #{status.created_at}"
-  puts status
-#  tweets.insert(status)
+  puts status.created_at.to_s
+  puts status.place.full_name if status.place
+  tweet_data = {
+    'created_at' => status.created_at,
+    'text' => status.full_text,
+    'hashtags' => status.hashtags.collect{|x| x.text},
+    'mentions' => status.user_mentions.collect{|x| x.screen_name},
+    'place' => (status.place && status.place.full_name) || nil,
+    'coordinates' => (status.geo && status.geo.coordinates) || nil,
+    'user' => status.from_user
+  }
+  tweets.insert(tweet_data)
 end
