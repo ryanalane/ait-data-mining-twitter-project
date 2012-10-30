@@ -2,6 +2,9 @@
 
 Geocode "bounding box":
 - Washington DC: 
+(lat, long)
+SW: (38.582526, -77.975464)
+NE: (39.253084, -76.760219)
 
 - Houston: 
 (lat, long)
