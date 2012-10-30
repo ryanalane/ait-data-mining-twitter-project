@@ -4,6 +4,9 @@ Geocode "bounding box":
 - Washington DC: 
 
 - Houston: 
+(lat, long)
+SW: (29.4862,-95.7301)
+NE: (30.4538,-94.8367)
 
 See: https://dev.twitter.com/docs/streaming-apis/parameters#locations
 
