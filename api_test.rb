@@ -6,7 +6,7 @@ require_relative 'tweetstream_config'
 # Sets up connection to local Mongo database
 db = Mongo::Connection.new.db("ait_twitter_mining")
 
-tweets = db.collection("tweets")
+tweets = db.collection("test_tweets")
 
 tweetstream_client = TweetStream::Client.new()
 
