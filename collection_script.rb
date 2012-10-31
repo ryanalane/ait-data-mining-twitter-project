@@ -66,6 +66,7 @@ tweetstream_client.filter(filter_params) do |status|
   puts status.created_at.to_s
   puts status.place.full_name if status.place
   tweet_data = {
+    'status' => status.id,
     'created_at' => status.created_at,
     'text' => status.full_text,
     'hashtags' => status.hashtags.collect{|x| x.text},
