@@ -54,7 +54,13 @@ filter_params[:track] = Array[
   'WhiteHouse',
 ]
 
-filter_params[:locations] = Array[]
+# Bounding Box coordinates for Washington D.C. and Houston metro areas:
+filter_params[:locations] = Array[
+  -77.975464, 38.582526, # DC-SW-lon, DC-SW-lat,
+  -76.760219, 39.253084, # DC-NE-lon, DC-NE-lat,
+  -95.7301, 29.4862, # Houston-SW-lon, Houston-SW-lat,
+  -94.8367, 30.4538 # Houston-NE-lon, Houston-NE-lat
+]
 
 tweetstream_client.filter(filter_params) do |status|
   puts status.created_at.to_s
