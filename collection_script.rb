@@ -63,8 +63,6 @@ filter_params[:locations] = Array[
 ]
 
 tweetstream_client.filter(filter_params) do |status|
-  puts status.created_at.to_s
-  puts status.place.full_name if status.place
   tweet_data = {
     'status' => status.id,
     'created_at' => status.created_at,
