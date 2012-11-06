@@ -4,7 +4,7 @@ require 'mongo'
 require_relative 'tweetstream_config'
 
 # Sets up connection to Mongo database
-db = Mongo::Connection.from_uri(ENV['MONGOLAB_URI']).db("ait_twitter_mining")
+db = Mongo::Connection.from_uri(ENV['MONGOHQ_URL']).db("ait_twitter_mining")
 
 tweets = db.collection("test_tweets")
 
