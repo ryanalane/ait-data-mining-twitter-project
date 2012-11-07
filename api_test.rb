@@ -1,10 +1,14 @@
 require 'tweetstream'
 require 'mongo'
+require 'uri'
 
 require_relative 'tweetstream_config'
 
 # Sets up connection to Mongo database
-db = Mongo::Connection.from_uri(ENV['MONGOHQ_URL']).db("ait_twitter_mining")
+puts ENV['MONGOHQ_URL']
+db = URI.parse(ENV['MONGOHQ_URL'])
+db_name = db.path.gsub(/^\//, '')
+db = Mongo::Connection.new(db.host, db.port).db('ait_twitter_mining')
 
 tweets = db.collection("test_tweets")
 
