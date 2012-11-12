@@ -5,10 +5,7 @@ require 'uri'
 require_relative 'tweetstream_config'
 
 # Sets up connection to Mongo database
-puts ENV['MONGOHQ_URL']
-db = URI.parse(ENV['MONGOHQ_URL'])
-db_name = db.path.gsub(/^\//, '')
-db = Mongo::Connection.new(db.host, db.port).db('ait_twitter_mining')
+db = Mongo::Connection.new.db("ait_twitter_mining")
 
 tweets = db.collection("test_tweets")
 
@@ -26,7 +23,7 @@ end
 
 
 filter_params = Hash.new
-filter_params[:track] = Array['election']
+filter_params[:track] = Array['photography']
 filter_params[:locations] = Array[]
 
 tweetstream_client.filter(filter_params) do |status|
