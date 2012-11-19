@@ -27,12 +27,13 @@ Hashtags/Keywords
 #christmas
 #christmaseve
 #xmas
+#santa
 #whitechristmas
 #christmascarols
 #carols
 #caroling
 #christmascaroling
-#presents
+#christmascarols
 #hanukkah
 #hanukka
 #hanuka
@@ -42,6 +43,9 @@ Hashtags/Keywords
 #chanukkah
 #chanukah
 #chanuka
+
+#kwanzaa
+#kwanza
 
 #newyear
 #newyears
