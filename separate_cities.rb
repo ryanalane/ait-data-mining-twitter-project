@@ -17,18 +17,11 @@ geotagged_tweets.find.each do |tweet|
   latitude = tweet['coordinates'][0]
 
   if latitude >= DC_latitude_bounds['lower'] and latitude <= DC_latitude_bounds['higher']
-    dc_tweet_count += 1
-    # dc_tweets.insert(tweet)
+    dc_tweets.insert(tweet)
   elsif latitude >= Houston_latitude_bounds['lower'] and latitude <= Houston_latitude_bounds['higher']
-    houston_tweet_count += 1
-    # houston_tweets.insert(tweet)
+    houston_tweets.insert(tweet)
   else
    # Leave the tweet alone 
   end
 
 end
-
-puts 'DC: ' + dc_tweet_count.to_s
-puts 'Houston: ' + houston_tweet_count.to_s
-puts 'Combined: ' + (dc_tweet_count + houston_tweet_count).to_s
-puts 'Total Geotagged: ' + geotagged_tweets.count.to_s
