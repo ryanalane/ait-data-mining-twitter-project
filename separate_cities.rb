@@ -28,7 +28,7 @@ geotagged_tweets.find.each do |tweet|
 
 end
 
-puts 'DC: ' + dc_tweet_count
-puts 'Houston: ' + houston_tweet_count
-puts 'Combined: ' + dc_tweet_count + houston_tweet_count
-puts 'Total Geotagged: ' + geotagged_tweets.count
+puts 'DC: ' + dc_tweet_count.to_s
+puts 'Houston: ' + houston_tweet_count.to_s
+puts 'Combined: ' + dc_tweet_count + houston_tweet_count.to_s
+puts 'Total Geotagged: ' + geotagged_tweets.count.to_s
