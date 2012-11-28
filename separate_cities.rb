@@ -16,7 +16,9 @@ geotagged_tweets.find.each do |tweet|
   elsif latitude >= Houston_latitude_bounds['lower'] and latitude <= Houston_latitude_bounds['higher']
     puts 'Houston'
   else
-    puts 'PROBLEM PROBLEM PROBLEM'
+    puts 'PROBLEM PROBLEM PROBLEM' 
+    puts tweet.hashtags 
+    break
   end
 
 end
