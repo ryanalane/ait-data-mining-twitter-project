@@ -9,7 +9,7 @@ utc_offsets = {'dc' => -5 * 3600, 'houston' => -6 * 3600}
 
 utc_collections.each_key do |city|
 
-  utc_collections[city].find.first(10).each do |tweet|
+  utc_collections[city].find.each do |tweet|
     tweet['created_at'] = tweet['created_at'] + utc_offsets[city]
     puts tweet['created_at']
     local_collections[city].insert(tweet)
